@@ -56,7 +56,55 @@ CREATE TABLE titles (
 	from_date DATE NOT NULL,
 	to_date DATE NOT NULL,
 	FOREIGN KEY (emp_no) REFERENCES employees (emp_no),
-	PRIMARY KEY (emp_no, title)
+	PRIMARY KEY (emp_no, title, from_date)
 );
 
-SELECT * FROM departments;
+SELECT * FROM titles;
+
+DROP TABLE titles CASCADE;
+
+-- Return list of employees who will be retiring soon based on age - born between 52 and 55 : 90k
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1955-12-31';
+
+-- Return list of employees born just in 1952 : 20k
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1952-01-01' AND '1952-12-31';
+
+-- Return list of employees born just in 1953 : 22k
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1953-01-01' AND '1953-12-31';
+
+-- Return list of employees born just in 1954 : 23k
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1954-01-01' AND '1954-12-31';
+
+-- Return list of employees born just in 1955 : 23k
+SELECT first_name, last_name
+FROM employees
+WHERE birth_date BETWEEN '1955-01-01' AND '1955-12-31';
+
+-- Return list of employees who will be retiring soon based on age and hire date : 41k
+SELECT first_name, last_name
+FROM employees
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
+
+-- Using the count function 
+SELECT COUNT(first_name)
+FROM employees
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
+
+-- Generating an output where result is table *instead of list as it was above
+SELECT first_name, last_name
+INTO retirement_info
+FROM employees
+WHERE (birth_date BETWEEN '1952-01-01' AND '1955-12-31')
+AND (hire_date BETWEEN '1985-01-01' AND '1988-12-31');
+
+SELECT * FROM retirement_info;
