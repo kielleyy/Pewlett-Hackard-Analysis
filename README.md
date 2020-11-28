@@ -22,7 +22,11 @@ This analysis answers the following two questions:
 2. Are there enough qualified, retirement-ready employees in the departments to mentor the next generation of Pewlett Hackard employees?
     Yes, there are enough employees to function as mentors however the current list of those who would be mentored is quite small: only 1549 employees qualify with current standards (count found in mentorship_eligibility.csv). Management should expand the definition of those that are qualified to be mentored.
 
-Additionally, outside of the initial questions, I've provided a department level analysis here. It appears that development and production departments pose the largest organizational risk given the number of older employees in each. Large scale employee departures in these departments could be paralyzing to the company as they are foundational elements in terms of output, supply and resulting revenue. These additional queries can be found in the sql file and tables with counts are seen below.
+Additionally, I've provided a department level analysis here. It appears that development and production departments are the most exposed, vis-a-vis potential retirees, and pose the largest organizational risk. Large scale employee departures in these departments could be paralyzing to the company as they are foundational elements in terms of output, supply and resulting revenue. These additional queries can be found in the challenge sql file and tables with counts are seen below.
+
+<img width="265" alt="Screen Shot 2020-11-28 at 2 57 06 PM" src="https://user-images.githubusercontent.com/71152576/100525234-ec9fa500-318c-11eb-8967-bd5301d9e919.png">
+
+<img width="265" alt="Screen Shot 2020-11-28 at 2 57 50 PM" src="https://user-images.githubusercontent.com/71152576/100525250-11941800-318d-11eb-8604-c2a4d6bb146d.png">
 
 
 ## High-level Findings by the numbers
